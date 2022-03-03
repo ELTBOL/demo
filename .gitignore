@@ -1,0 +1,9 @@
+# Ignore the build directory
+/target
+/test-output
+/Screenshots
+
+.metadata
+.settings
+.classpath
+.project
