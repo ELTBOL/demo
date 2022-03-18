@@ -1,13 +1,13 @@
 package utilities;
 
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.safari.SafariDriver;
 
 public class BrowserFactories {
 
@@ -18,17 +18,19 @@ public class BrowserFactories {
 		// WebDriver driver = null;
 		if (browsername.equalsIgnoreCase("edge")) {
 			WebDriverManager.edgedriver().setup();
-
 			driver = new EdgeDriver();
-		}
-
-		else if (browsername.equalsIgnoreCase("chrome")) {
+			
+		} else if (browsername.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 
 		} else if (browsername.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
+
+		} else if (browsername.equalsIgnoreCase("safari")) {
+			WebDriverManager.safaridriver().setup();
+			driver = new SafariDriver();
 		}
 
 		driver.manage().window().maximize();

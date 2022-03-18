@@ -43,7 +43,7 @@ public class BaseClass {
 		System.out.println("LOG: INFO- Creating Browser Session");
 		
 		String environment = System.getProperty("Env","PROD");
-		String browser = System.getProperty("Browser","chrome");
+		String browser = System.getProperty("browser","chrome");
 
 		switch (environment) {
 		case "DEV":
