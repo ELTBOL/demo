@@ -8,21 +8,19 @@ import pages.TalentAquisition;
 import pages.VerifyJoinUs;
 import utilities.BaseClass;
 
-public class JoinUs extends BaseClass{
+public class JoinUs extends BaseClass {
 
 	OpenBrowser op;
 	VerifyJoinUs vjs;
 	TalentAquisition ta;
-	
-	@Test (priority=2)
-	public void JoinUsregTest() throws InterruptedException
-	{
-		logger = report.createTest("Regression test for Join Us landing page for corporate site" );
+
+	@Test(priority = 2)
+	public void JoinUsregTest() throws InterruptedException {
+		logger = report.createTest("Regression test for Join Us landing page for corporate site");
 		op = PageFactory.initElements(driver, OpenBrowser.class);
 		vjs = PageFactory.initElements(driver, VerifyJoinUs.class);
 		ta = PageFactory.initElements(driver, TalentAquisition.class);
-		
-		
+
 		op.cookiespu();
 		logger.pass("Cookies pop up initialized");
 		op.validateHomePage();
@@ -39,7 +37,6 @@ public class JoinUs extends BaseClass{
 		logger.pass("Talent Transition Page Validated");
 		ta.ValidateTalentApplication();
 		logger.pass("Talent Aquisition Application Validated");
-		
-		
+
 	}
 }

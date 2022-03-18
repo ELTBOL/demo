@@ -8,32 +8,29 @@ import java.util.Properties;
 public class ConfigDataProvider {
 
 	Properties pro;
-	
-	public ConfigDataProvider()
-	{
-		try
-		{
+
+	public ConfigDataProvider() {
+		try {
 			pro = new Properties();
-			pro.load(new FileInputStream(new File(System.getProperty("user.dir")+"/ConfigFiles/config.properties")));
-		}
-		catch(IOException e)
-		{
-			System.out.println("Unable to load properties file: "+e.getMessage());
+			pro.load(new FileInputStream(new File(System.getProperty("user.dir") + "/ConfigFiles/config.properties")));
+		} catch (IOException e) {
+			System.out.println("Unable to load properties file: " + e.getMessage());
 		}
 	}
-	
-	public String getBrowser()
-	{
+
+	public String getBrowser() {
 		return pro.getProperty("browser");
 	}
-	
-	public String getStagingURL()
-	{
+
+	public String getStagingURL() {
 		return pro.getProperty("stagingURL");
 	}
-	public String getValueFromProperties(String key)
-	{
+	public String getDevURL() {
+		return pro.getProperty("devURL");
+	}
+
+	public String getValueFromProperties(String key) {
 		return pro.getProperty(key);
 	}
-	
+
 }
